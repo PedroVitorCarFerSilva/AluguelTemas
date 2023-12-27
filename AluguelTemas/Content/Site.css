@@ -1,12 +1,85 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: comic sans ms;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+body {
+    background-color: #ffeeff;
+}
+
+header {
+    background-color: #ffddff;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: #220033;
+}
+
+main {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+}
+
+td, th {
+    border-top: 2px solid #ffddff;
+    padding: 0.5em;
+}
+
+h2 {
+    margin: 0.5em;
+}
+
+h3 {
+    margin-bottom: 0.5em;
+}
+
+p a {
+    background-color: #ffddff;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+hr {
+    border: 1px solid #ffddff;
+}
+
+dd, dt {
+    margin-bottom: 0.5em;
+}
+
+input.btn {
+    border: 2px solid #ffccff;
+    padding: 5px;
+    background-color: #0000;
+    border-radius: 3px;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+div.form-group {
+    margin-top: 1em;
+}
+
+input.form-control {
+    background-color: #0000;
+    border: 2px solid #ffccff;
+    border-radius: 3px;
+}
+
+footer {
+    background-color: #ffddff;
+    padding: 2em;
+    margin-top: 1em;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -15,4 +88,3 @@ select,
 textarea {
     max-width: 280px;
 }
-

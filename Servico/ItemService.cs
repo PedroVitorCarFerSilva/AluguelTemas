@@ -17,11 +17,15 @@ namespace Servico
         }
         public IEnumerable<ItemTema> ObterTodosItens()
         {
-
+            return itemDAL.ObterTodosItens();
         }
         public void GravarItem(ItemTema item)
         {
             itemDAL.GravarItem(item);
+        }
+        public void ApagarItem(long id)
+        {
+            itemDAL.ApagarItem(id);
         }
     }
 }

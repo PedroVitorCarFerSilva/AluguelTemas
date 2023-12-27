@@ -15,17 +15,67 @@ namespace AluguelTemas.Controllers
         // GET: Item
         public ActionResult Index()
         {
-            return View(servico.ObterTodosItens);
+            return View(servico.ObterTodosItens());
         }
-        public ActionResult CadastrarItem()
+        public ActionResult Cadastrar()
         {
             return View();
         }
-
-        [HttpPost]
-        public ActionResult CriarItem(ItemTema tema)
+        public ActionResult Apagar(long? id)
         {
-            servico.GravarItem(tema);
+            var item = servico.ObterTodosItens();
+            if (id != null)
+            {
+                return View(item.FirstOrDefault(i => i.ItemId == id));
+            }
+            return RedirectToAction("Index");
+        }
+        public ActionResult Editar(long? id)
+        {
+            var item = servico.ObterTodosItens();
+            if (id != null)
+            {
+                return View(item.FirstOrDefault(i => i.ItemId == id));
+            }
+            return RedirectToAction("Index");
+        }
+        public ActionResult Detalhes(long? id)
+        {
+            var item = servico.ObterTodosItens();
+            if (id != null)
+            {
+                return View(item.FirstOrDefault(i => i.ItemId == id));
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult CriarItem(ItemTema item)
+        {
+            servico.GravarItem(item);
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ApagarItem(ItemTema item)
+        {
+            var id = item.ItemId;
+            if (id != 0)
+            {
+                servico.ApagarItem(id);
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditarItem(ItemTema item)
+        {
+            if (item != null)
+            {
+                if (ModelState.IsValid)
+                {
+                    servico.GravarItem(item);
+                }
+            }
             return RedirectToAction("Index");
         }
     }

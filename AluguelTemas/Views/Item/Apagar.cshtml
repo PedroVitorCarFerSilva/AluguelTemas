@@ -1,0 +1,46 @@
+﻿@model Modelo.ItemTema
+
+@{
+    ViewBag.Title = "Apagar";
+}
+
+<h2>Apagar item: @Model.Nome</h2>
+
+<h3>Tem certeza que quer deletar esse item?</h3>
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("ApagarItem", "Item", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.HiddenFor(model => model.ItemId)
+
+        <div class="form-actions no-color">
+            <p>
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+    }
+</div>

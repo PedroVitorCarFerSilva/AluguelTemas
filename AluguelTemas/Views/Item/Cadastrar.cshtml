@@ -1,10 +1,10 @@
 ﻿@model Modelo.ItemTema
 
 @{
-    ViewBag.Title = "CadastrarItem";
+    ViewBag.Title = "Cadastrar";
 }
 
-<h2>CadastrarItem</h2>
+<h2>Cadastrar item</h2>
 
 
 @using (Html.BeginForm("CriarItem", "Item", FormMethod.Post)) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ItemTema</h4>
+        <h4>Item</h4>
         <hr />
 
         @Html.HiddenFor(model => model.ItemId)
@@ -42,7 +42,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <p>@Html.ActionLink("Back to List", "Index")</p>
 </div>
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
