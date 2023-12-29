@@ -23,28 +23,28 @@ namespace AluguelTemas.Controllers
         }
         public ActionResult Apagar(long? id)
         {
-            var item = servico.ObterTodosItens();
+            var item = servico.ObterItemPorId(id);
             if (id != null)
             {
-                return View(item.FirstOrDefault(i => i.ItemId == id));
+                return View(item);
             }
             return RedirectToAction("Index");
         }
         public ActionResult Editar(long? id)
         {
-            var item = servico.ObterTodosItens();
+            var item = servico.ObterItemPorId(id);
             if (id != null)
             {
-                return View(item.FirstOrDefault(i => i.ItemId == id));
+                return View(item);
             }
             return RedirectToAction("Index");
         }
         public ActionResult Detalhes(long? id)
         {
-            var item = servico.ObterTodosItens();
+            var item = servico.ObterItemPorId(id);
             if (id != null)
             {
-                return View(item.FirstOrDefault(i => i.ItemId == id));
+                return View(item);
             }
             return RedirectToAction("Index");
         }
