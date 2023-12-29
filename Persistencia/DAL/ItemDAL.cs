@@ -39,7 +39,7 @@ namespace Persistencia.DAL
         }
         public void ApagarItem(long id)
         {
-            var item = db.ItensTema.FirstOrDefault(i => i.ItemId == id);
+            var item = ObterItemPorId(id);
             db.ItensTema.Remove(item);
             db.SaveChanges();
         }
