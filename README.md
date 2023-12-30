@@ -4,7 +4,7 @@
 - 📚 apresenta visual 2019 e modelagem dinâmica (em específico, comunicação e sequência)
 </br>
 
-<img src="https://github.com/PedroVitorCarFerSilva/AluguelTemas/assets/105497607/a3dd1012-cf1c-43ab-a7cd-c2d9ee97deaf">
+<img src="https://github.com/PedroVitorCarFerSilva/AluguelTemas/assets/105497607/a3dd1012-cf1c-43ab-a7cd-c2d9ee97deaf"></br>
 
 <h2>Dupla</h2>
   
